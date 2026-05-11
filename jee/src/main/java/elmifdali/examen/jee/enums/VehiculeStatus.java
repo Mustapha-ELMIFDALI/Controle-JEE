@@ -1,5 +1,5 @@
-package com.elmifdali.digitalbanking.enums;
+package elmifdali.examen.jee.enums;
 
-public enum AccountStatus {
-    CREATED,ACTIVATED,SUSPENDED
+public enum VehiculeStatus {
+    DISPONIBLE,LOUE,ENMAINTENANCE
 }
