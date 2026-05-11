@@ -1,17 +1,11 @@
 package elmifdali.examen.jee.entities;
 
-
 import elmifdali.examen.jee.enums.MotorcycleType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@Table(name = "motorcycle")
 @Getter
 @Setter
 @NoArgsConstructor

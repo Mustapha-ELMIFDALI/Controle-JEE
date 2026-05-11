@@ -1,44 +1,54 @@
 package elmifdali.examen.jee.entities;
 
+import elmifdali.examen.jee.enums.RentalStatus;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import elmifdali.examen.jee.enums.RentalStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 @Entity
+@Table(name = "location")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = "vehicule")
 public class Location {
 
     @Id
     private String id = UUID.randomUUID().toString();
 
+    @NotBlank
+    @Column(nullable = false)
     private String nomClient;
+
+    @Email
+    @Column(nullable = false)
     private String emailClient;
+
     private String telephoneClient;
 
+    @NotNull
+    @Column(nullable = false)
     private LocalDate dateDebut;
+
+    @NotNull
+    @Column(nullable = false)
     private LocalDate dateFin;
+
     private LocalDate dateRetourReelle;
 
+    @Column(nullable = false)
     private double prixTotal;
 
     @Enumerated(EnumType.STRING)
-    private RentalStatus statut;
+    @Column(nullable = false)
+    private RentalStatus statut = RentalStatus.EN_ATTENTE;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vehicule_id", nullable = false)
     private Vehicule vehicule;
 }
