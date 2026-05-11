@@ -63,3 +63,4 @@ public class AgenceController {
         return ResponseEntity.ok(agenceService.getVehiculesAgence(id));
     }
 }
+# ajout controllers rest
