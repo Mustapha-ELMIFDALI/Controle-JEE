@@ -64,3 +64,4 @@ public class JwtService {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
+# ajout securite jwt
