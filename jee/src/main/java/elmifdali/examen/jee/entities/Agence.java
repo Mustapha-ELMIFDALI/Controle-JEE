@@ -12,10 +12,12 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString(exclude = "vehicles")
 public class Agence {
 
     @Id
+    @Builder.Default
     private String id = UUID.randomUUID().toString();
 
     @Column(nullable = false)
@@ -29,5 +31,6 @@ public class Agence {
     private String phone;
 
     @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Builder.Default
     private List<Vehicule> vehicles = new ArrayList<>();
 }

@@ -136,4 +136,3 @@ public class LocationServiceImpl implements LocationService {
         return vehicule.getPrixParJour() * jours;
     }
 }
-# ajout services

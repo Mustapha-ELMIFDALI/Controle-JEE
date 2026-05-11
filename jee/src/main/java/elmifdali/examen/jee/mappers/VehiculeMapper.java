@@ -106,4 +106,3 @@ public class VehiculeMapper {
         if (dto.getStatus() != null) vehicule.setStatus(dto.getStatus());
     }
 }
-# correction mappers

@@ -8,4 +8,3 @@ public interface AgenceRepository extends JpaRepository<Agence, String> {
     List<Agence> findByCityIgnoreCase(String city);
     List<Agence> findByNameContainingIgnoreCase(String name);
 }
-# correction repositories

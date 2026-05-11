@@ -598,4 +598,3 @@ L'application est prête à être étendue avec un frontend Angular ou une inté
 ---
 
 *Rapport rédigé par **Mustapha ELMIFDALI** – Master SDIA – ENSET Mohammedia – Mai 2022*
-# readme

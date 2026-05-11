@@ -18,6 +18,7 @@ import java.util.UUID;
 public class AppUser {
 
     @Id
+    @Builder.Default
     private String id = UUID.randomUUID().toString();
 
     @Column(nullable = false)
@@ -32,11 +33,13 @@ public class AppUser {
     @Column(nullable = false)
     private String password;
 
+    @Builder.Default
     private boolean actif = true;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
+    @Builder.Default
     private Set<Role> roles = new HashSet<>();
 }
