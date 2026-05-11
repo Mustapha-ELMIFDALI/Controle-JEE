@@ -5,9 +5,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import java.util.Date;
 
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder @ToString
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @SuperBuilder @ToString
 public class VehiculeDTO {
     private Long id;
     @NotBlank(message = "La marque est obligatoire")
